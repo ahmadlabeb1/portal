@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\mne_logo.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="app_data\image\" />
+    <Folder Include="wwwroot\lib\slider\" />
   </ItemGroup>
 
 </Project>

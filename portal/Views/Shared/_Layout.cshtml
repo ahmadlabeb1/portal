@@ -4,55 +4,114 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - portal</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />*@
+    @*<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/slider/js/camera.min.js"></script>
+    <script src="~/lib/slider/js/jquery.easing.1.3.js"></script>
+    @*<script src="~/lib/slider/js/jquery.mobile.customized.min.js"></script>*@
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
 
+    <link rel="icon" href="~/Mne_logo.png" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/slider/css/camera.css" rel="stylesheet" />
     <script src="~/js/fontawesome.js"></script>
     <style>
-        .nav-item:hover {
-            border: 1px dotted red;
+        body {
+            background: #f3f3f3;
         }
 
-        .carousel-control-next, .carousel-control-prev {
-            color: lightblue;
+        .bg-topnav {
+            background: linear-gradient(357deg, #f7f3f3, transparent),linear-gradient(179deg, #f7f3f3b0, #efecec14)
         }
 
-        .search {
-            position: absolute;
-            border: none;
-            margin-right: 7%;
-        }
-
-        .nav-login {
-            background: linear-gradient( 179deg, #03a9f461, transparent),linear-gradient( 272deg, #03a9f461, transparent);
-            border-bottom: 1px #03a9f4 solid;
+        .camera_thumb {
+            /*visibility:hidden;*/
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="nav nav-login">
-            <div class="container">
+    <header class="bg-topnav">
+        <div class="container">
+            <nav class="row align-items-center">
+                <div class="col-5 of">
+                    <ul class="nav">
+                        <li><button class="btn btn-link nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="الصفحة الرئيسية"><i class="fas fa-home"></i></button></li>
+                        <li><a class="nav-link" href="" title="اتصل بنا"><i class="fas fa-phone"></i></a></li>
+                        <li><a class="nav-link" href="" title="خريطة الموقع"><i class="fas fa-sitemap"></i></a></li>
+                        <li><a class="nav-link" href="" title="الاسئلة الاكثر تكرارا"><i class="far fa-question-circle"></i></a></li>
+                        <li><a class="nav-link" href="" title="تسجيل الدخول"><i class="fas fa-user"></i></a></li>
+                        <li><a class="nav-link" href="" title="بحث"><i class="fas fa-search"></i></a></li>
+                        <li><button class="btn btn-link nav-link" href="" title="اشعارات" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotify" aria-controls="offcanvasScrolling"><i class="fas fa-bell"></i></button></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <img src="~/Mne_logo.png" />
+                </div>
+            </nav>
+        </div>
 
-                <ul class="nav align-items-center">
-                    <li class="nav-item">
-                        <form class="d-flex">
-                            <input class="form-control-sm me-2" style="width:auto;" type="search" placeholder="بحث..." aria-label="Search">
-                            <button class="btn btn-link search" type="submit"><i class="fas fa-search"></i></button>
-                        </form>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMNEt" aria-controls="navbarMNE" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarMNEt">
+                <ul class="navbar-nav me-auto  mb-2 mb-lg-0 ">
+                    <li class=" text-center px-3">
+                        <a class="nav-link  text-white " href="#">عن الوزارة</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link">تسجيل الدخول <i class="fas fa-user"></i></a></li>
-                    <li class="nav-item"><a class="nav-link">اتصل بنا </a></li>
+                    <li class="text-center px-3">
+                        <a class="nav-link text-white" href="#">خدمات الوزارة</a>
+                    </li>
+                    <li class="text-center px-3">
+                        <a class="nav-link text-white" href="#">الادارات العامة </a>
+                    </li>
+                    <li class="text-center px-3 ">
+                        <a class="nav-link text-white" href="#">مشاريع الوزارة </a>
+                    </li>
+                    <li class="text-center px-3">
+                        <a class="nav-link text-white" href="#">الوظائف</a>
+                    </li>
                 </ul>
             </div>
-
         </div>
-        <nav class="nav nav-tabs">
+    </nav>
 
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+   
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasNotify" aria-labelledby="offcanvasNotifyLabel">
+        <div class="offcanvas-header  border-bottom border-dark">
+            <h5 class="offcanvas-title" id="offcanvasNotifyLabel"> <i class="fas fa-bell"></i><span class="gx-2">اشعارات</span></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item">الاشعار رقم 1</li>
+                <li class="list-group-item">تنبيه</li>
+                <li class="list-group-item">اعلان</li>
+                <li class="list-group-item">عطاء</li>
+                <li class="list-group-item">استشارات</li>
+            </ul>
+        </div>
+    </div>
+    
+    @*<div class="offcanvas offcanvas-end" tabindex="-1" id="offCanvaseAdv" aria-labelledby="offcanvasAdvLabel">
+            <div class="offcanvas-header">
+                <h5 id="offcanvasAdvLabel"></h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="offcanvas-body">
+
+                </div>
+            </div>
+        </div>*@
+    <div class="">
+
+        <main role="main" @*class="pb-3"*@>
             @RenderBody()
         </main>
     </div>
@@ -62,8 +121,16 @@
             @*&copy; 2021 - portal - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $('.camera_wrap').camera({
+            height: '35%',
+            pagination: false,
+            thumbnails: false
+        });
+
+    </script>
+
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
