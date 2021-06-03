@@ -1,1 +1,14 @@
 ﻿
+.w-c {
+    width: 25%;
+}
+@media screen and (max-width: 576px) {
+    .w-c{
+        width:100%;
+        
+    }
+   
+}
+@media screen and (max-width: 1200px) {
+   
+}

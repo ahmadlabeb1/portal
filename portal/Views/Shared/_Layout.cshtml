@@ -4,18 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - portal</title>
-    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />*@
-    @*<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />*@
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="~/lib/slider/js/camera.min.js"></script>
-    <script src="~/lib/slider/js/jquery.easing.1.3.js"></script>
-    @*<script src="~/lib/slider/js/jquery.mobile.customized.min.js"></script>*@
+    <link rel="icon" href="~/Mne_logo.png" />
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
-
-    <link rel="icon" href="~/Mne_logo.png" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/lib/slider/css/camera.css" rel="stylesheet" />
     <script src="~/js/fontawesome.js"></script>
@@ -39,25 +30,25 @@
             <nav class="row align-items-center">
                 <div class="col-5 of">
                     <ul class="nav">
-                        <li><button class="btn btn-link nav-link" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="الصفحة الرئيسية"><i class="fas fa-home"></i></button></li>
+                        <li><button class="btn btn-link nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="الصفحة الرئيسية"><i class="fas fa-home"></i></button></li>
                         <li><a class="nav-link" href="" title="اتصل بنا"><i class="fas fa-phone"></i></a></li>
                         <li><a class="nav-link" href="" title="خريطة الموقع"><i class="fas fa-sitemap"></i></a></li>
                         <li><a class="nav-link" href="" title="الاسئلة الاكثر تكرارا"><i class="far fa-question-circle"></i></a></li>
                         <li><a class="nav-link" href="" title="تسجيل الدخول"><i class="fas fa-user"></i></a></li>
-                        <li><a class="nav-link" href="" title="بحث"><i class="fas fa-search"></i></a></li>
+                        <li><button class="btn btn-link nav-link" title="بحث" data-bs-toggle="modal" data--target="#MneSearch"><i class="fas fa-search"></i></button></li>
                         <li><button class="btn btn-link nav-link" href="" title="اشعارات" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotify" aria-controls="offcanvasScrolling"><i class="fas fa-bell"></i></button></li>
                     </ul>
                 </div>
-                <div class="col-6" style="text-align:end;">
+                <div class="col-6">
                     <img src="~/Mne_logo.png" />
                 </div>
             </nav>
         </div>
 
     </header>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-primary">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMNEt" aria-controls="navbarMNE" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top bg-primary">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMNEt" aria-controls="navbarMNE" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="text-white navbar-toggler-icon"></span>
         </button>
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarMNEt">
@@ -83,7 +74,7 @@
     </nav>
 
 
-   
+
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasNotify" aria-labelledby="offcanvasNotifyLabel">
         <div class="offcanvas-header  border-bottom border-dark">
             <h5 class="offcanvas-title" id="offcanvasNotifyLabel"> <i class="fas fa-bell"></i><span class="gx-2">اشعارات</span></h5>
@@ -99,16 +90,23 @@
             </ul>
         </div>
     </div>
-    
-    @*<div class="offcanvas offcanvas-end" tabindex="-1" id="offCanvaseAdv" aria-labelledby="offcanvasAdvLabel">
-            <div class="offcanvas-header">
-                <h5 id="offcanvasAdvLabel"></h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                <div class="offcanvas-body">
+
+    <div class="modal fade" id="MneSearch" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="MneSearchLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">بحث</h5>
+                    <button type="button" class="btn-close" id="MneSearchLabel" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">الغاء</button>
+                </div>
             </div>
-        </div>*@
+        </div>
+    </div>
     <div class="">
 
         <main role="main" @*class="pb-3"*@>
@@ -122,6 +120,15 @@
         </div>
     </footer>
 
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/lib/bootstrap/dist/js/popper.min.js"></script>
+
+    <script src="~/lib/slider/js/camera.min.js"></script>
+    <script src="~/lib/slider/js/jquery.easing.1.3.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
         $('.camera_wrap').camera({
             height: '35%',
@@ -130,8 +137,6 @@
         });
 
     </script>
-
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
