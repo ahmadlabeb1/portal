@@ -9,6 +9,7 @@
     <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/lib/slider/css/camera.css" rel="stylesheet" />
+   
     <script src="~/js/fontawesome.js"></script>
     <style>
         body {
@@ -35,12 +36,12 @@
                         <li><a class="nav-link" href="" title="خريطة الموقع"><i class="fas fa-sitemap"></i></a></li>
                         <li><a class="nav-link" href="" title="الاسئلة الاكثر تكرارا"><i class="far fa-question-circle"></i></a></li>
                         <li><a class="nav-link" href="" title="تسجيل الدخول"><i class="fas fa-user"></i></a></li>
-                        <li><button class="btn btn-link nav-link" title="بحث" data-bs-toggle="modal" data--target="#MneSearch"><i class="fas fa-search"></i></button></li>
+                        <li><button class="btn btn-link nav-link" title="بحث" data-bs-toggle="modal" data-bs-target="#MneSearch"><i class="fas fa-search"></i></button></li>
                         <li><button class="btn btn-link nav-link" href="" title="اشعارات" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotify" aria-controls="offcanvasScrolling"><i class="fas fa-bell"></i></button></li>
                     </ul>
                 </div>
-                <div class="col-6">
-                    <img src="~/Mne_logo.png" />
+                <div class="col-6" style="text-align:left;">
+                    <a href="#"> <img src="~/Mne_logo.png" class="w-c" /></a>
                 </div>
             </nav>
         </div>
@@ -53,21 +54,50 @@
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarMNEt">
                 <ul class="navbar-nav me-auto  mb-2 mb-lg-0 ">
-                    <li class=" text-center px-3">
-                        <a class="nav-link  text-white " href="#">عن الوزارة</a>
+                    <li class="link_nav-h dropdown text-center px-3">
+                            <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                عن الوزارة
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark-c" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">item 1</a></li>
+                                <li><a class="dropdown-item" href="#">item 2</a></li>
+                                <li><a class="dropdown-item" href="#">item3</a></li>
+                            </ul>
                     </li>
-                    <li class="text-center px-3">
-                        <a class="nav-link text-white" href="#">خدمات الوزارة</a>
+                    <li class="link_nav-h dropdown text-center px-3">
+                        <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                            خدمات الوزارة
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark-c" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="#">item 1</a></li>
+                            <li><a class="dropdown-item" href="#">item 2</a></li>
+                            <li><a class="dropdown-item" href="#">item3</a></li>
+                        </ul>
                     </li>
-                    <li class="text-center px-3">
-                        <a class="nav-link text-white" href="#">الادارات العامة </a>
+                    <li class="dropdown link_nav-h text-center px-3">
+                        <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
+                            الادارات العامة
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark-c" aria-labelledby="dropdownMenuButton4">
+                            <li><a class="dropdown-item" href="#">item 1</a></li>
+                            <li><a class="dropdown-item" href="#">item 2</a></li>
+                            <li><a class="dropdown-item" href="#">item3</a></li>
+                        </ul>
                     </li>
-                    <li class="text-center px-3 ">
-                        <a class="nav-link text-white" href="#">مشاريع الوزارة </a>
+                    <li class="dropdown link_nav-h text-center px-3 ">
+                        <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
+                            مشاريع الوزارة
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark-c" aria-labelledby="dropdownMenuButton5">
+                            <li><a class="dropdown-item" href="#">item 1</a></li>
+                            <li><a class="dropdown-item" href="#">item 2</a></li>
+                            <li><a class="dropdown-item" href="#">item3</a></li>
+                        </ul>
                     </li>
-                    <li class="text-center px-3">
+                    <li class="dropdown text-center px-3">
                         <a class="nav-link text-white" href="#">الوظائف</a>
                     </li>
+                    
                 </ul>
             </div>
         </div>
@@ -91,24 +121,58 @@
         </div>
     </div>
 
-    <div class="modal fade" id="MneSearch" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="MneSearchLabel" aria-hidden="true">
-        <div class="modal-dialog">
+
+
+    <div class="modal fade" id="MneSearch" data-bs-backdrop="static" role="dialog" data-bs-keyboard="false" tabindex="-1" aria-labelledby="MneSearchLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg-c modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">بحث</h5>
                     <button type="button" class="btn-close" id="MneSearchLabel" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div class="form-floating mb-3">
 
+                        <input type="text" id="search_Mne" name="search_Mne" class="form-control" placeholder="بحث" />
+                        <label for="search_Mne">بحث</label>
+                    </div>
+                    <hr />
+                    <div class="container-fluid">
+                        <h5>الاكثر بحثا</h5>
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                    <li><a href="#" class="link-hint link-secondary">قانون الشركات </a></li>
+                                    <li><a href="#" class="link-hint link-secondary">الصناعة</a></li>
+                                    <li><a href="#" class="link-hint link-secondary">الملكية الفكرية </a></li>
+                                    <li><a href="#" class="link-hint link-secondary">العلامات التجارية</a></li>
+                                    <li><a href="#" class="link-hint link-secondary">الوكالات التجارية</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><a href="#" class="link-hint link-secondary">قانون الشركات </a></li>
+                                    <li><a href="#" class="link-hint link-secondary">الصناعة</a></li>
+                                    <li><a href="#" class="link-hint link-secondary">الملكية الفكرية </a></li>
+                                    <li><a href="#" class="link-hint link-secondary">العلامات التجارية</a></li>
+                                    <li><a href="#" class="link-hint link-secondary">الوكالات التجارية</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">الغاء</button>
+                <div class="modal-footer justify-content-around">
+                    <button type="button" id="searchContant" class="btn btn-outline-primary">بحث</button>
+                    <button type="button" id="advancedSearch" class="btn btn-outline-primary">بحث متقدم</button>
+                    <button type="button" id="hintsSearch" class="btn btn-outline-primary">تلميحات البحث</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">الغاء</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="">
-
+       
         <main role="main" @*class="pb-3"*@>
             @RenderBody()
         </main>

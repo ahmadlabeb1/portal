@@ -2,13 +2,61 @@
 .w-c {
     width: 25%;
 }
+
 @media screen and (max-width: 576px) {
-    .w-c{
-        width:100%;
-        
+    .w-c {
+        width: 100%;
     }
-   
 }
+
 @media screen and (max-width: 1200px) {
-   
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+li > .link-hint {
+    text-decoration: none;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/*.dropdown > .dropdown-toggle:active {
+    without this, clicking will make it sticky
+}*/
+.bg-mne-c {
+    background: #bf9d62;
+}
+
+.dropdown-menu-dark-c {
+    color: white;
+    background-color: #0765c3;
+    border-color: rgb(0 0 0 / 0%);
+}
+
+.link_nav-h {
+    transition: 0.1s ease-in-out;
+}
+
+    .link_nav-h:hover {
+        border-top: 2px solid #4caf50;
+    }
