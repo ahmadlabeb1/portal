@@ -57,6 +57,17 @@ li > .link-hint {
     transition: 0.1s ease-in-out;
 }
 
-    .link_nav-h:hover {
+.link_nav-h:hover {
         border-top: 2px solid #4caf50;
     }
+.col-3-c {
+    flex: 0 0 auto;
+    width: 24%;
+}
+.image-static {
+    background-image: url("../b2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
