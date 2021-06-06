@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - portal</title>
+    <title>@ViewData["Title"] - وزارة الاقتصاد</title>
     <link rel="icon" href="~/Mne_logo.png" />
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
@@ -25,7 +25,7 @@
         }
 
         .bg-golde {
-            background-color: #c0c578;
+            background-color: #afb64b;
         }
 
         .camera_thumb {
@@ -45,7 +45,10 @@
         }
 
         .bg-footer-3 {
-            background-color: #e1e1e1c4;
+            background-color: #dfdede;
+        }
+        .color-fa {
+            color: #b8ae37;
         }
     </style>
 </head>
@@ -55,13 +58,13 @@
             <nav class="row align-items-center">
                 <div class="col-5 of">
                     <ul class="nav">
-                        <li><button class="btn btn-link nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="الصفحة الرئيسية"><i class="fas fa-home"></i></button></li>
-                        <li><a class="nav-link" href="" title="اتصل بنا"><i class="fas fa-phone"></i></a></li>
-                        <li><a class="nav-link" href="" title="خريطة الموقع"><i class="fas fa-sitemap"></i></a></li>
-                        <li><a class="nav-link" href="" title="الاسئلة الاكثر تكرارا"><i class="far fa-question-circle"></i></a></li>
-                        <li><a class="nav-link" href="" title="تسجيل الدخول"><i class="fas fa-user"></i></a></li>
-                        <li><button class="btn btn-link nav-link" title="بحث" data-bs-toggle="modal" data-bs-target="#MneSearch"><i class="fas fa-search"></i></button></li>
-                        <li><button class="btn btn-link nav-link" href="" title="اشعارات" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotify" aria-controls="offcanvasScrolling"><i class="fas fa-bell"></i></button></li>
+                        <li><button class="btn btn-link nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="الصفحة الرئيسية"><i class="fas fa-home color-fa"></i></button></li>
+                        <li><a class="nav-link" href="" title="اتصل بنا"><i class="fas fa-phone color-fa"></i></a></li>
+                        <li><a class="nav-link" href="" title="خريطة الموقع"><i class="fas fa-sitemap color-fa"></i></a></li>
+                        <li><a class="nav-link" href="" title="الاسئلة الاكثر تكرارا"><i class="far fa-question-circle color-fa"></i></a></li>
+                        <li><a class="nav-link" href="" title="تسجيل الدخول"><i class="fas fa-user color-fa"></i></a></li>
+                        <li><button class="btn btn-link nav-link" title="بحث" data-bs-toggle="modal" data-bs-target="#MneSearch"><i class="fas fa-search color-fa"></i></button></li>
+                        <li><button class="btn btn-link nav-link" href="" title="اشعارات" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotify" aria-controls="offcanvasScrolling"><i class="fas fa-bell color-fa"></i></button></li>
                     </ul>
                 </div>
                 <div class="col-6" style="text-align:left;">
@@ -71,7 +74,7 @@
         </div>
 
     </header>
-    <nav class="navbar navbar-expand-sm navbar-dark sticky-top bg-primary">
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top bg-golde">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMNEt" aria-controls="navbarMNE" aria-expanded="false" aria-label="Toggle navigation">
             <span class="text-white navbar-toggler-icon"></span>
         </button>
@@ -82,7 +85,7 @@
                         <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             عن الوزارة
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark-c" aria-labelledby="dropdownMenuButton1">
+                        <ul class="dropdown-menu dropdown-menu-golde-c " aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="#">item 1</a></li>
                             <li><a class="dropdown-item" href="#">item 2</a></li>
                             <li><a class="dropdown-item" href="#">item3</a></li>
@@ -92,7 +95,7 @@
                         <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                             خدمات الوزارة
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark-c" aria-labelledby="dropdownMenuButton2">
+                        <ul class="dropdown-menu dropdown-menu-golde-c" aria-labelledby="dropdownMenuButton2">
                             <li><a class="dropdown-item" href="#">item 1</a></li>
                             <li><a class="dropdown-item" href="#">item 2</a></li>
                             <li><a class="dropdown-item" href="#">item3</a></li>
@@ -102,7 +105,7 @@
                         <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
                             الادارات العامة
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark-c" aria-labelledby="dropdownMenuButton4">
+                        <ul class="dropdown-menu dropdown-menu-golde-c" aria-labelledby="dropdownMenuButton4">
                             <li><a class="dropdown-item" href="#">item 1</a></li>
                             <li><a class="dropdown-item" href="#">item 2</a></li>
                             <li><a class="dropdown-item" href="#">item3</a></li>
@@ -112,7 +115,7 @@
                         <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
                             مشاريع الوزارة
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark-c" aria-labelledby="dropdownMenuButton5">
+                        <ul class="dropdown-menu dropdown-menu-golde-c" aria-labelledby="dropdownMenuButton5">
                             <li><a class="dropdown-item" href="#">item 1</a></li>
                             <li><a class="dropdown-item" href="#">item 2</a></li>
                             <li><a class="dropdown-item" href="#">item3</a></li>

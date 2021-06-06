@@ -47,9 +47,9 @@ li > .link-hint {
     background: #bf9d62;
 }
 
-.dropdown-menu-dark-c {
+.dropdown-menu-golde-c {
     color: white;
-    background-color: #0765c3;
+    background-color: #c4cf36;
     border-color: rgb(0 0 0 / 0%);
 }
 
@@ -111,11 +111,9 @@ opacity: 0.2;
 }
 
 .owl-carousel .prev-slide{
-  background: url(nav-icon.png) no-repeat scroll 0 0;
   left: -33px;
 }
 .owl-carousel .next-slide{
-  background: url(nav-icon.png) no-repeat scroll -24px 0px;
   right: -33px;
 }
 .owl-carousel .prev-slide:hover{
