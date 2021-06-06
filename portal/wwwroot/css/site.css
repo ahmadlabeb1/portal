@@ -71,3 +71,56 @@ li > .link-hint {
     background-attachment: fixed;
     background-size: cover;
 }
+.image-static-adv{
+    background-image:url("../secton_logo.jpg");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.item {
+    height: 10rem;
+      
+     background-color: #4DC7A0;
+}
+.mt{
+    margin-top:4rem;
+}
+.owl-theme .owl-nav {
+    font-size: xx-large;
+}
+.adv-item{
+    padding-top:1rem;
+}
+.owl-dots{
+
+}
+
+
+.owl-carousel .nav-btn{
+  height: 47px;
+  position: absolute;
+  width: 26px;
+  cursor: pointer;
+  top: 100px !important;
+}
+
+.owl-carousel .owl-prev.disabled,
+.owl-carousel .owl-next.disabled{
+pointer-events: none;
+opacity: 0.2;
+}
+
+.owl-carousel .prev-slide{
+  background: url(nav-icon.png) no-repeat scroll 0 0;
+  left: -33px;
+}
+.owl-carousel .next-slide{
+  background: url(nav-icon.png) no-repeat scroll -24px 0px;
+  right: -33px;
+}
+.owl-carousel .prev-slide:hover{
+ background-position: 0px -53px;
+}
+.owl-carousel .next-slide:hover{
+background-position: -24px -53px;
+}   

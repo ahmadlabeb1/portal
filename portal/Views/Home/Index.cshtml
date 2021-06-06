@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "الصفحة الرئيسية ";
 }
-<div class="d-flex flex-column">
+<div class="d-flex flex-column ">
     <div class="">
         <div class="camera_wrap">
 
@@ -18,93 +18,272 @@
             <div data-src="/b2.jpg"></div>
         </div>
     </div>
-    
+
 </div>
 
+
 <div class="container">
-    <div class="my-1 text-center border border-3" style="height:200px; ">
-        <h1>card slider</h1>
-    </div>
-    <div class="row px-lg-2 px-sm-1  justify-content-lg-between justify-content-sm-around" style="height:100px;">
-        <div class="col-lg-8 mx-1 col-md-7 col-sm-12 my-1 border border-3" style="height:50px;">اعلانات الوزارة </div>
-        <div class="col-lg-3 mx-1 col-md-2 col-sm-12 my-1 border border-3" style="height:50px">الخدمات الالكترونية</div>
+    <div class=" text-center " @*style="height:200px; "*@>
+
+        <div class="owl-carousel owl-theme mt " id="card_services" style="direction:rtl;">
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>1</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>2</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>3</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>4</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>5</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>6</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>7</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>8</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>9</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>10</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>11</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>12</h4></div>
+        </div>
     </div>
     <div class="my-2">
+        <div class="row px-lg-2 px-sm-1  justify-content-lg-between  ">
+            <div class="col-lg-8 mx-1 col-md-7 col-sm-12 my-1 border border-1 border-primary" style="height:250px;">
+                <h5 class="my-3 mx-3">اعلانات </h5>
+                <div class="owl-carousel owl-theme" id="adv_adv">
+                    <div class="adv-item">
+                        <p class="adv-title">
+                            اعلان منح مشروع نجاحها: تمكين الشابات الرياديات الفلسطينيات في القطاع الزراعي1
+                        </p>
+                        <div class="adv-date"><span>11/11/2020 1:14:22</span></div>
+                    </div>
+                    <div class="adv-item">
+                        <p class="adv-title">
+                            اعلان منح مشروع نجاحها: تمكين الشابات الرياديات الفلسطينيات في القطاع الزراعي2
+                        </p>
+                        <div class="adv-date"><span>11/11/2020 1:14:22</span></div>
+                    </div>
+                    <div class="adv-item">
+                        <p class="adv-title">
+                            اعلان منح مشروع نجاحها: تمكين الشابات الرياديات الفلسطينيات في القطاع الزراعي3
+                        </p>
+                        <div class="adv-date"><span>11/11/2020 1:14:22</span></div>
+                    </div>
+                    <div class="adv-item">
+                        <p class="adv-title">
+                            اعلان منح مشروع نجاحها: تمكين الشابات الرياديات الفلسطينيات في القطاع الزراعي4
+                        </p>
+                        <div class="adv-date"><span>11/11/2020 1:14:22</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mx-1 col-md-2 col-sm-12 my-1 border border-1 border-primary" style="height: auto;">
+                <h5 class="my-3 mx-3">الخدمات الالكترونية</h5>
+                <ul>
+                    <li>تسجيل شركة</li>
+                    <li>خدمات الملكية الفكرية</li>
+                    <li>تسجيل مصنع</li>
+                    <li>تجديد شركة</li>
+                    <li>رخصة صناعة</li>
+                    <li>التجارة</li>
+                    <li>شكاوى حماية المستهلك</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-2 py-3">
         <h1 class="text-center ">اخبار الوزارة</h1>
-        <div class="row my-5 justify-content-between">
-            <div class="card col-3" style="width: 18rem;">
-                <img src="~/b1.jpg" class="card-img-top" alt="...">
+        <div class=" my-5 owl-carousel owl-theme" id="news_card">
+            <div class="card col-lg-3" style="width: 18rem; ">
+                <img src="~/b1.jpg" class="card-img-top" height="160" alt="...">
                 <div class="card-body">
                     <p class="card-text">لقاء الوزير مع السفير</p>
                     <a href="#" class="btn btn-outline-primary">المزيد</a>
                 </div>
             </div>
-            <div class="card col-3" style="width: 18rem;">
-                <img src="~/b2.jpg" class="card-img-top" alt="...">
+            <div class="card col-lg-3 " style="width: 18rem;">
+                <img src="~/b2.jpg" class="card-img-top" height="160" alt="...">
                 <div class="card-body">
                     <p class="card-text">اجتماع الوزير</p>
                     <a href="#" class="btn btn-outline-primary">المزيد</a>
                 </div>
             </div>
-            <div class="card col-3" style="width: 18rem;">
-                <img src="~/demand.png" class="card-img-top" alt="...">
+            <div class="card col-lg-3" style="width: 18rem;">
+                <img src="~/demand.png" class="card-img-top" height="160" alt="...">
                 <div class="card-body">
                     <p class="card-text">ورشة عمل</p>
                     <a href="#" class="btn btn-outline-primary">المزيد</a>
                 </div>
             </div>
-            <div class="card col-3" style="width: 18rem;">
-                <img src="~/b1.jpg" class="card-img-top" alt="...">
+            <div class="card col-lg-3" style="width: 18rem;">
+                <img src="~/b1.jpg" class="card-img-top" height="160" alt="...">
                 <div class="card-body">
                     <p class="card-text">اجتماع ادارة تكنولوجيا</p>
                     <a href="#" class="btn btn-outline-primary">المزيد</a>
                 </div>
             </div>
+
+
         </div>
-        <div class="text-center">
-        <button type="button" class="btn btn-outline-info">المزيد</button>
+        <div class="text-center my-4">
+            <button type="button" class="btn btn-outline-info">المزيد</button>
         </div>
     </div>
-    <section class="image-static py-3 text-white" style="height:300px;">
-        <h5 class="text-center ">أنشطة وفعاليات</h5>
-        <div class="row mx-4">
-            <div class="col-6 my-3" style="height:200px; border-left:2px solid white;">
-                <a href="#" class="event-items">
-                    <div class="date"></div>
-                    <div class="title"></div>
-                </a>
-                <a href="#" class="event-items">
-                    <div class="date"></div>
-                    <div class="title"></div>
-                </a>
-            </div>
-            <div class="col-6 "  style="height:200px;">
-                <a href="#" class="event-items">
-                    <div class="date"></div>
-                    <div class="title"></div>
-                </a>
-                <a href="#" class="event-items">
-                    <div class="date"></div>
-                    <div class="title"></div>
-                </a>
-            </div>
-        </div>
-    </section>
-    <section class="my-2 border border-2" style="height:200px;">
-        <div class="container text-center">
-            برامج 
-        </div>
-    </section>
-    <section class="my-2  border border-1" id="promotional-movie" style="height:400px;">
-        <div class="row">
-            <article class="col-lg-5 col-md-5 col-sm-8">
-                فيديو
-            </article>
-            <article class="col-lg-5 col-md-5 col-sm-8">
-                <h1>الفلم الترويجي</h1>
-            </article>
-        </div>
-        
-    </section>
 </div>
 
+<section class="image-static my-2 py-3 text-white" style="height:400px;">
+    <h5 class="text-center ">أنشطة وفعاليات</h5>
+    <div class="row mx-4">
+        <div class="col-6 my-3" style="height:300px; border-left:2px solid white;">
+            <a href="#" class="event-items">
+                <div class="date"></div>
+                <div class="title"></div>
+            </a>
+            <a href="#" class="event-items">
+                <div class="date"></div>
+                <div class="title"></div>
+            </a>
+        </div>
+        <div class="col-6 " style="height:300px;">
+            <a href="#" class="event-items">
+                <div class="date"></div>
+                <div class="title"></div>
+            </a>
+            <a href="#" class="event-items">
+                <div class="date"></div>
+                <div class="title"></div>
+            </a>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <section class="my-2 border border-2" style="height:150px;">
+        <div class="container text-center">
+            برنامج
+        </div>
+    </section>
+</div>
+<section class="my-2 image-static-adv border " id="promotional-movie" style="height:400px;">
+    <div class="row">
+        <article class="col-lg-5 col-md-5 col-sm-8">
+            فيديو
+        </article>
+        <article class="col-lg-5 col-md-5 col-sm-8">
+            <h1>الفلم الترويجي</h1>
+        </article>
+    </div>
+
+</section>
+<div class="container">
+
+    <div class="my-2 align-content-center justify-content-center border border-1" style="height:250px;">
+        <p class="text-center">مؤسسات التابعة</p>
+        <div class="owl-carousel owl-theme mx-5 " style="width:80%;" id="orgnization_att">
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>المواصفات والمقاييس</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>تشجيع الاستثمار</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>المدن الصناعية </h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>التكافل</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>5</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>6</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>7</h4></div>
+
+        </div>
+    </div>
+</div>
+
+@section scripts_owl{
+    <link href="~/lib/owlSlider/css/animate.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            $('#card_services').owlCarousel({
+                rtl: true,
+                loop: true,
+                dots: false,
+                nav: true,
+                margin: 30,
+                autoplay: true,
+                autoplayTimeout: 1500,
+                autoplayHoverPause: true,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 2,
+                        nav: true,
+                        center: true,
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 4,
+                        nav: true,
+                        loop: false
+                    }
+                }
+
+            });
+            $('#adv_adv').owlCarousel({
+                rtl: true,
+                loop: true,
+                animateOut: 'slideInRight',
+                animateIn: ' slideOutLeft',
+                items: 1,
+                margin: 30,
+                autoplay: true,
+                autoplayTimeout: 2500,
+            });
+            $('#news_card').owlCarousel({
+                rtl: true,
+                loop: true,
+                animateOut: 'slideInRight',
+                animateIn: ' slideOutLeft',
+                autoplay: false,
+                autoplayTimeout: 2500,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
+                        center: true,
+                        dots: true,
+                    },
+                    600: {
+                        items: 3,
+                        nav: true
+                    },
+                    1000: {
+                        items: 4,
+                        nav: false,
+                        loop: false
+                    }
+                }
+            });
+            $('#orgnization_att').owlCarousel({
+                rtl: true,
+                loop: false,
+                dots: false,
+                nav: true,
+                margin: 30,
+                autoplay: true,
+                autoplayTimeout: 1500,
+                autoplayHoverPause: true,
+                responsiveClass: true,
+                navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+                responsive: {
+                    0: {
+                        items: 2,
+                        nav: true,
+                        center: true,
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 4,
+                        nav: true,
+                        loop: false
+                    }
+                }
+
+            });
+        });
+
+    </script>
+}
