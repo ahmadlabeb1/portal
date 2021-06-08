@@ -2,10 +2,10 @@
     ViewData["Title"] = "الصفحة الرئيسية ";
 }
 <div class="d-flex flex-column ">
-    <div class="">
-        <div class="camera_wrap">
+    <div class="" >
+        <div class="camera_wrap" style="height: 600px;">
 
-            <div data-src="/IMG_7594.JPG">
+            <div data-src="/IMG_7594.JPG" style="height: 478px;">
                 <div class="camera_caption text-center">اجتماع الوزير </div>
                 <div class="fadeIn camera_effected text-center mt-auto">
                     <h5 class="text-start" style="margin-right:30%;">برازيل</h5>
@@ -40,9 +40,9 @@
             <div class="item shadow-sm mb-1 bg-body rounded"><h4>12</h4></div>
         </div>
     </div>
-    <div class="my-2">
-        <div class="row px-lg-2 px-sm-1  justify-content-lg-between  ">
-            <div class="col-lg-8 mx-1 col-md-7 col-sm-12 my-1 border border-1 border-primary" style="height:250px;">
+    <div class="my-2 container-sm">
+        <div class="row px-lg-2 px-sm-1  justify-content-lg-between justify-content-sm-start  ">
+            <div class="col-lg-8 mx-1 col-md-7 col-sm-11 my-1  border-golde rounded" style="height:250px;">
                 <h5 class="my-3 mx-3">اعلانات </h5>
                 <div class="owl-carousel owl-theme" id="adv_adv">
                     <div class="adv-item">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 mx-1 col-md-2 col-sm-12 my-1 border border-1 border-primary" style="height: auto;">
+            <div class="col-lg-3 mx-1 col-md-2 col-sm-11 my-1 border-golde rounded"  style="height: auto;">
                 <h5 class="my-3 mx-3">الخدمات الالكترونية</h5>
                 <ul>
                     <li>تسجيل شركة</li>
@@ -86,9 +86,9 @@
         </div>
     </div>
 
-    <div class="my-2 py-3">
+    <div class="my-2 py-3 container-sm">
         <h1 class="text-center ">اخبار الوزارة</h1>
-        <div class=" my-5 owl-carousel owl-theme" id="news_card">
+        <div class=" container-sm my-5 mx-sm-3 owl-carousel owl-theme" id="news_card">
             <div class="card col-lg-3" style="width: 18rem; ">
                 <img src="~/b1.jpg" class="card-img-top" height="160" alt="...">
                 <div class="card-body">
@@ -158,36 +158,41 @@
         </div>
     </section>
 </div>
-<section class="my-2 image-static-adv border " id="promotional-movie" style="height:400px;">
-    <div class="row">
-        <div class="col-lg-6 border border-2 border-primary"></div>
-        <div class="col-lg-5 border border-2 border-primary"></div>
-        
-        @*<article class="col-lg-5 col-md-5 col-sm-8">
-            فيديو
-        </article>
-        <article class="col-lg-5 col-md-5 col-sm-8">
-            <h1>الفلم الترويجي</h1>
-        </article>*@
-    </div>
+<div class="my-2 image-static-adv" id="promotional-movie" style="height:400px;">
 
-</section>
-<div class="container" style="width: 70%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 border border-2 border-primary">
+                <a data-fancybox href="https://www.youtube.com/watch?v=o5pXIG-NuFQ">
 
-    <div class="my-2 align-content-center justify-content-center border border-1" style="height:250px;">
-        <p class="text-center">مؤسسات التابعة</p>
-        <div class="owl-carousel owl-theme  " style="" id="orgnization_att">
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>المواصفات والمقاييس</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>تشجيع الاستثمار</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>المدن الصناعية </h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>التكافل</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>5</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>6</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>7</h4></div>
+                </a>
+            </div>
+            <div class="col-lg-5 border border-2 border-primary"></div>
 
         </div>
     </div>
+  
+
+
+
+
 </div>
+@*<div class="container-fluid" style="">
+
+        <div class="my-5 align-content-center container justify-content-center " style="height:250px;">
+            <h5 class="text-center ">مؤسسات التابعة</h5>
+            <div class="owl-carousel owl-theme my-4 " style="" id="orgnization_att">
+                <div class="item shadow-sm mb-1 bg-body rounded"><h4>المواصفات والمقاييس</h4></div>
+                <div class="item shadow-sm mb-1 bg-body rounded"><h4>تشجيع الاستثمار</h4></div>
+                <div class="item shadow-sm mb-1 bg-body rounded"><h4>المدن الصناعية </h4></div>
+                <div class="item shadow-sm mb-1 bg-body rounded"><h4>التكافل</h4></div>
+                <div class="item shadow-sm mb-1 bg-body rounded"><h4>5</h4></div>
+                <div class="item shadow-sm mb-1 bg-body rounded"><h4>6</h4></div>
+                <div class="item shadow-sm mb-1 bg-body rounded"><h4>7</h4></div>
+
+            </div>
+        </div>
+    </div>*@
 
 @section scripts_owl{
     <link href="~/lib/owlSlider/css/animate.css" rel="stylesheet" />
@@ -229,7 +234,7 @@
                 items: 1,
                 margin: 30,
                 autoplay: true,
-                autoplayTimeout: 2500,
+                autoplayTimeout: 3000,
             });
             $('#news_card').owlCarousel({
                 rtl: true,
@@ -245,6 +250,8 @@
                         nav: false,
                         center: true,
                         dots: true,
+                        animateOut: 'slideInRight',
+                        animateIn: ' slideOutLeft',
                     },
                     600: {
                         items: 3,
@@ -258,17 +265,18 @@
                 }
             });
             $('#orgnization_att').owlCarousel({
+
+
                 rtl: true,
                 loop: true,
                 dots: false,
                 nav: true,
-                center: true,
                 margin: 30,
-                autoplay: false,
-                autoplayTimeout: 1500,
-                autoplayHoverPause: false,
+                autoplay: true,
+                autoplayTimeout: 2000,
                 responsiveClass: true,
                 navText: ['<div class="nav-btn prev-slide"><i class="fas fa-chevron-left"></i></div><div class="nav-btn next-slide"><i class="fas fa-angle-right"></i></div>'],
+
                 responsive: {
                     0: {
                         items: 2,

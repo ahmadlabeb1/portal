@@ -47,16 +47,18 @@
         .bg-footer-3 {
             background-color: #dfdede;
         }
-        .color-fa {
-            color: #b8ae37;
+        .border-golde {
+            border: 1px solid #b8ae37;
         }
+    
     </style>
 </head>
 <body>
     <header class="bg-topnav">
         <div class="container">
             <nav class="row align-items-center">
-                <div class="col-5 of">
+
+                <div class="col-lg-5 col-md-5 col-sm-12 of">
                     <ul class="nav">
                         <li><button class="btn btn-link nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="الصفحة الرئيسية"><i class="fas fa-home color-fa"></i></button></li>
                         <li><a class="nav-link" href="" title="اتصل بنا"><i class="fas fa-phone color-fa"></i></a></li>
@@ -67,7 +69,7 @@
                         <li><button class="btn btn-link nav-link" href="" title="اشعارات" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotify" aria-controls="offcanvasScrolling"><i class="fas fa-bell color-fa"></i></button></li>
                     </ul>
                 </div>
-                <div class="col-6" style="text-align:left;">
+                <div class="col-lg-6 col-md-5 col-sm-12 align-image">
                     <a href="#"> <img src="~/Mne_logo.png" class="w-c" /></a>
                 </div>
             </nav>
@@ -85,7 +87,7 @@
                         <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             عن الوزارة
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-golde-c " aria-labelledby="dropdownMenuButton1">
+                        <ul class="dropdown-menu dropdown-menu-golde-c animiation-drop" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="#">item 1</a></li>
                             <li><a class="dropdown-item" href="#">item 2</a></li>
                             <li><a class="dropdown-item" href="#">item3</a></li>
@@ -95,7 +97,7 @@
                         <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                             خدمات الوزارة
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-golde-c" aria-labelledby="dropdownMenuButton2">
+                        <ul class="dropdown-menu dropdown-menu-golde-c animiation-drop" aria-labelledby="dropdownMenuButton2">
                             <li><a class="dropdown-item" href="#">item 1</a></li>
                             <li><a class="dropdown-item" href="#">item 2</a></li>
                             <li><a class="dropdown-item" href="#">item3</a></li>
@@ -105,7 +107,7 @@
                         <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
                             الادارات العامة
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-golde-c" aria-labelledby="dropdownMenuButton4">
+                        <ul class="dropdown-menu dropdown-menu-golde-c animiation-drop" aria-labelledby="dropdownMenuButton4">
                             <li><a class="dropdown-item" href="#">item 1</a></li>
                             <li><a class="dropdown-item" href="#">item 2</a></li>
                             <li><a class="dropdown-item" href="#">item3</a></li>
@@ -115,7 +117,7 @@
                         <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
                             مشاريع الوزارة
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-golde-c" aria-labelledby="dropdownMenuButton5">
+                        <ul class="dropdown-menu dropdown-menu-golde-c animiation-drop" aria-labelledby="dropdownMenuButton5">
                             <li><a class="dropdown-item" href="#">item 1</a></li>
                             <li><a class="dropdown-item" href="#">item 2</a></li>
                             <li><a class="dropdown-item" href="#">item3</a></li>
@@ -1904,9 +1906,10 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
         $('.camera_wrap').camera({
-            height: '35%',
+            height: '20%',
             pagination: false,
-            thumbnails: false
+            thumbnails: false,
+
         });
 
     </script>
