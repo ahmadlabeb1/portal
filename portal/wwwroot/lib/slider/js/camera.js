@@ -465,10 +465,10 @@
 									break;
 							}
 							t.css({
-								'height' : hT*r,
+								'height' :'100%' ,
 								'margin-left' : 0,
 								'margin-right' : 0,
-								'margin-top' : mTop,
+								'margin-top' : 0,
 								'position' : 'absolute',
 								'visibility' : 'visible',
 								'width' : w
@@ -507,7 +507,7 @@
 									break;
 							}
 							t.css({
-								'height' : h,
+								'height' : '100%',
 								'margin-left' : mLeft,
 								'margin-right' : mLeft,
 								'margin-top' : 0,
@@ -550,7 +550,7 @@
 									break;
 							}
 							t.css({
-								'height' : h,
+								'height' : '100%',
 								'margin-left' : mLeft,
 								'margin-right' : mLeft,
 								'margin-top' : 0,
@@ -592,10 +592,10 @@
 									break;
 							}
 							t.css({
-								'height' : hT*r,
+								'height' : '100%',
 								'margin-left' : 0,
 								'margin-right' : 0,
-								'margin-top' : mTop,
+								'margin-top' : 0,
 								'position' : 'absolute',
 								'visibility' : 'visible',
 								'width' : w
