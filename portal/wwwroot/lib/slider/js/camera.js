@@ -465,7 +465,7 @@
 									break;
 							}
 							t.css({
-								'height' :'100%' ,
+								//'height' :'100%' ,
 								'margin-left' : 0,
 								'margin-right' : 0,
 								'margin-top' : 0,

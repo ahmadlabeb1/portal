@@ -8,6 +8,11 @@
 .align-image {
     text-align: left;
 }
+.modal-animation {
+    animation-name: bounceInDown;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards
+}
 @media screen and (max-width: 576px) {
     .w-c {
         width:70%;
@@ -19,9 +24,18 @@
     .align-image{
         text-align:center;
     }
+    .modal-animation {
+        animation-name: rotateInDownRight;
+        animation-duration: 0.4s;
+    }
+    .animation-drop-sm {
+        animation-name: fadeInDown;
+        animation-duration: 0.4s;
+    }
 }
 
 @media screen and (max-width: 1200px) {
+   
 }
 
 ::-webkit-scrollbar {
@@ -136,7 +150,7 @@ pointer-events: none;
 .owl-carousel .next-slide>i:hover {
     color: #b8ae37;
 }
-.animiation-drop {
-    animation-name: rotateInUpRight;
+.animation-drop {
+    animation-name: fadeInDown;
     animation-duration: 0.4s;
 }
