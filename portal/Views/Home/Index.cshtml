@@ -178,7 +178,7 @@
 
 
 </div>
-@*<div class="container-fluid" style="">
+<div class="" style="">
 
         <div class="my-5 align-content-center container justify-content-center " style="height:250px;">
             <h5 class="text-center ">مؤسسات التابعة</h5>
@@ -193,7 +193,7 @@
 
             </div>
         </div>
-    </div>*@
+    </div>
 
 @section scripts_owl{
     <link href="~/lib/owlSlider/css/animate.css" rel="stylesheet" />
@@ -276,7 +276,6 @@
                 autoplay: true,
                 autoplayTimeout: 2000,
                 responsiveClass: true,
-                navText: ['<div class="nav-btn prev-slide"><i class="fas fa-chevron-left"></i></div><div class="nav-btn next-slide"><i class="fas fa-angle-right"></i></div>'],
 
                 responsive: {
                     0: {
@@ -291,7 +290,9 @@
                     1000: {
                         items: 4,
                         nav: true,
-                        loop: false
+                        loop: false,
+                        navText: ['<div class="nav-btn prev-slide"><i class="fas fa-chevron-left"></i></div><div class="nav-btn next-slide"><i class="fas fa-angle-right"></i></div>'],
+
                     }
                 }
 
