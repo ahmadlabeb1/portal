@@ -27,6 +27,7 @@
     .modal-animation {
         animation-name: rotateInDownRight;
         animation-duration: 0.4s;
+        animation-fill-mode:forwards;
     }
     .animation-drop-sm {
         animation-name: fadeInDown;
