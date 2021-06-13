@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using portal.Data;
 using portal.Models;
 using System;
 using System.Collections.Generic;
@@ -12,16 +16,47 @@ namespace portal.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly PortalContext _context;
+        public HomeController(ILogger<HomeController> logger,PortalContext context)
         {
             _logger = logger;
+            this._context = context;
         }
-
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string lang="ar")
         {
-            return View();
+            ViewBag.dirPage = "rtl";
+            ViewBag.lang = lang;
+            ViewBag.linkLang = "English";
+            ViewBag.href = "en";
+            var cookieOptions = new CookieOptions
+            {
+                 
+                Secure = true,
+
+                
+                HttpOnly = true,
+
+             
+                SameSite = SameSiteMode.None
+            };
+
+            Response.Cookies.Append("dirPage",ViewBag.dirPage, cookieOptions);
+            var alldata = _context.Language.Where(a => a.Lang_key.Contains(lang)).Select(s => s);
+            if (lang=="en")
+            {
+                ViewBag.dirPage = "ltr";
+                ViewBag.lang = lang;
+                ViewBag.linkLang = "عربي";
+                ViewBag.href = "ar";
+                ViewBag.styleImage="image-size";
+            }
+            return View(await alldata.ToListAsync());
         }
+        //public IActionResult Index(string lang="ar")
+        //{
+        //    var all_data= _context.Language.Select(a => a).Where(a => a.Lang_key.Contains(lang));
+        //    return View(all_data);
+        //}
 
         public IActionResult Privacy()
         {

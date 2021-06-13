@@ -1,5 +1,9 @@
-﻿<!DOCTYPE html>
-<html lang="en" dir="rtl">
+﻿@using Microsoft.AspNetCore.Http.Features;
+@{
+//var dirPage=Request
+}
+<!DOCTYPE html>
+<html lang="@ViewBag.lang" dir="@ViewBag.dirPage">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,13 +51,14 @@
         .bg-footer-3 {
             background-color: #dfdede;
         }
+
         .border-golde {
             border: 1px solid #b8ae37;
         }
-    
     </style>
 </head>
 <body>
+
     <header class="bg-topnav">
         <div class="container">
             <nav class="row align-items-center">
@@ -67,10 +72,10 @@
                         <li class="col-lg-auto col-sm-auto"><button class="nav-link btn btn-link" title="تسجيل الدخول"><i class="fas fa-user color-fa"></i></button></li>
                         <li class="col-lg-auto col-sm-auto"><button class="btn btn-link nav-link" title="بحث" data-bs-toggle="modal" data-bs-target="#MneSearch"><i class="fas fa-search color-fa"></i></button></li>
                         <li class="col-lg-auto col-sm-auto"><button class="btn btn-link nav-link" href="" title="اشعارات" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotify" aria-controls="offcanvasScrolling"><i class="fas fa-bell color-fa"></i></button></li>
-                        <li class="col-lg-auto col-sm-auto"><button href="#" class="btn btn-link nav-link"><i class=" color-fa">English</i></button></li>
+                        <li class="col-lg-auto col-sm-auto"><button href="/Index?lang=@ViewBag.href" class="btn btn-link nav-link"><i class=" color-fa">@ViewBag.linkLang</i></button></li>
                     </ul>
                 </div>
-                <div class="col-lg-6 col-md-5 col-sm-12 align-image">
+                <div class="col-lg-6 col-md-5 col-sm-12 align-image  @ViewBag.styleImage">
                     <a href="#"> <img src="~/Mne_logo.png" class="w-c" /></a>
                 </div>
             </nav>
@@ -1913,7 +1918,6 @@
             thumbnails: false,
 
         });
-
     </script>
     @await RenderSectionAsync("Scripts", required: false)
     @await RenderSectionAsync("scripts_owl", required: false)

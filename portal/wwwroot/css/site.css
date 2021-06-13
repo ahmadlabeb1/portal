@@ -154,3 +154,6 @@ pointer-events: none;
     animation-name: fadeInDown;
     animation-duration: 0.4s;
 }
+.image-size{
+    text-align:left;
+}
