@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using portal.Data;
 
 namespace portal
 {
@@ -26,6 +27,9 @@ namespace portal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<PortalContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("PortalContext")));
             //services.AddDbContext<PortalContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("PortalContext")));
         }
 

@@ -2,18 +2,18 @@
     ViewData["Title"] = "الصفحة الرئيسية ";
 }
 <div class="d-flex flex-column ">
-    <div class="" >
+    <div class="">
         <div class="camera_wrap" style="height: 600px;">
 
             <div data-src="/IMG_7594.JPG" style="height: 478px;">
-            <div class="camera_caption text-center">اجتماع الوزير </div>
-            <div class="fadeIn camera_effected text-center mt-auto">
-                <h5 class="text-start" style="margin-right:30%;">برازيل</h5>
-                <p>لقاء مع الوزير</p>
+                <div class="camera_caption text-center">اجتماع الوزير </div>
+                <div class="fadeIn camera_effected text-center mt-auto">
+                    <h5 class="text-start" style="margin-right:30%;">برازيل</h5>
+                    <p>لقاء مع الوزير</p>
+                </div>
             </div>
-        </div>
-        <div data-src="/IMG_9661.JPG"><div class="camera_caption text-center">اجتماع الوزير </div></div>
-        <div data-src="/IMG_8356.JPG"><div class="camera_caption text-center">اجتماع الوزير </div></div>
+            <div data-src="/IMG_9661.JPG"><div class="camera_caption text-center">اجتماع الوزير </div></div>
+            <div data-src="/IMG_8356.JPG"><div class="camera_caption text-center">اجتماع الوزير </div></div>
             <div data-src="/b1.jpg"></div>
             <div data-src="/b2.jpg"></div>
 
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 mx-1 col-md-2 col-sm-11 my-1 border-golde rounded"  style="height: auto;">
+            <div class="col-lg-3 mx-1 col-md-2 col-sm-11 my-1 border-golde rounded" style="height: auto;">
                 <h5 class="my-3 mx-3">الخدمات الالكترونية</h5>
                 <ul>
                     <li>تسجيل شركة</li>
@@ -172,7 +172,7 @@
 
         </div>
     </div>
-  
+
 
 
 
@@ -180,24 +180,32 @@
 </div>
 <div class="" style="">
 
-        <div class="my-5 align-content-center container justify-content-center " style="height:250px;">
-            <h5 class="text-center ">مؤسسات التابعة</h5>
-            <div class="owl-carousel owl-theme my-4 " style="" id="orgnization_att">
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>المواصفات والمقاييس</h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>تشجيع الاستثمار</h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>المدن الصناعية </h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>التكافل</h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>5</h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>6</h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>7</h4></div>
+    <div class="my-5 align-content-center container justify-content-center " style="height:250px;">
+        <h5 class="text-center ">مؤسسات التابعة</h5>
+        <div class="owl-carousel owl-theme my-4 " style="" id="orgnization_att">
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>المواصفات والمقاييس</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>تشجيع الاستثمار</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>المدن الصناعية </h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>التكافل</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>5</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>6</h4></div>
+            <div class="item shadow-sm mb-1 bg-body rounded"><h4>7</h4></div>
 
-            </div>
         </div>
     </div>
+</div>
 
 @section scripts_owl{
-    <link href="~/lib/owlSlider/css/animate.css" rel="stylesheet" />
+    <script src="~/lib/slider/js/camera.js"></script>
+
     <script>
+        $('.camera_wrap').camera({
+            height: '20%',
+            pagination: false,
+            thumbnails: false,
+
+        });
+
         $(function () {
             $('#card_services').owlCarousel({
                 rtl: true,

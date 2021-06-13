@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using portal.Data;
 using portal.Models;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,22 @@ namespace portal.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly PortalContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+  
+        // GET: Navigations
+        
+        public HomeController(ILogger<HomeController> logger, PortalContext context)
         {
+            _context = context;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
+            //var dataNav = _context.Navigation.Select(a => a.nav_Name);
+            var data = _context.Navigation.Select(a => a);
+            return View(data);
         }
 
         public IActionResult Privacy()

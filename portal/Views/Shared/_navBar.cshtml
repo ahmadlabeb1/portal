@@ -1,0 +1,114 @@
+﻿@model IEnumerable<portal.Models.Navigation>
+<div class="collapse navbar-collapse animation-drop-sm" id="navbarMNEt">
+    <ul class="navbar-nav me-auto  mb-2 mb-lg-0 ">
+        @foreach (var item in Model)
+        {
+            if (item.lang_id == 1 && item.isActive == true)
+            {
+                if (item.isGroup == true)
+                {
+                    <li class="link_nav-h dropdown text-center px-3">
+                        <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            @item.nav_Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-golde-c animation-drop" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">item 1</a></li>
+                            <li><a class="dropdown-item" href="#">item 2</a></li>
+                            <li><a class="dropdown-item" href="#">item3</a></li>
+                        </ul>
+                    </li>
+                }
+                if (item.isGroup == false)
+                {
+                    <li class="dropdown text-center px-3">
+                        <a class="nav-link text-white" href="#">@item.nav_Name</a>
+                    </li>
+                }
+            }
+
+        }
+
+
+    </ul>
+</div>
+
+
+@*<li class="link_nav-h dropdown text-center px-3">
+        <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            خدمات الوزارة
+        </a>
+        <ul class="dropdown-menu dropdown-menu-golde-c animation-drop" aria-labelledby="dropdownMenuButton2">
+            <li><a class="dropdown-item" href="#">item 1</a></li>
+            <li><a class="dropdown-item" href="#">item 2</a></li>
+            <li><a class="dropdown-item" href="#">item3</a></li>
+        </ul>
+    </li>
+    <li class="dropdown link_nav-h text-center px-3">
+        <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
+            الادارات العامة
+        </a>
+        <ul class="dropdown-menu dropdown-menu-golde-c animation-drop" aria-labelledby="dropdownMenuButton4">
+            <li><a class="dropdown-item" href="#">item 1</a></li>
+            <li><a class="dropdown-item" href="#">item 2</a></li>
+            <li><a class="dropdown-item" href="#">item3</a></li>
+        </ul>
+    </li>
+    <li class="dropdown link_nav-h text-center px-3 ">
+        <a class="btn btn-link nav-link text-white dropdown-toggle" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
+            مشاريع الوزارة
+        </a>
+        <ul class="dropdown-menu dropdown-menu-golde-c animation-drop" aria-labelledby="dropdownMenuButton5">
+            <li><a class="dropdown-item" href="#">item 1</a></li>
+            <li><a class="dropdown-item" href="#">item 2</a></li>
+            <li><a class="dropdown-item" href="#">item3</a></li>
+        </ul>
+    </li>
+*@
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nav_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nav_Url)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nav_Location)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.isActive)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Language)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nav_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nav_Url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nav_Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isActive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Language.Lang_Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Nav_Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Nav_Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Nav_Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
