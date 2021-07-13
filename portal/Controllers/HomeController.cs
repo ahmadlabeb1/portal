@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using portal.Data;
 using portal.Models;
+using portal.Models.Lang;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,14 +15,47 @@ using System.Threading.Tasks;
 
 namespace portal.Controllers
 {
+    [MiddlewareFilter(typeof(LocalizationPipeline))]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly PortalContext _context;
+        private string _currentLanguage;
+
         public HomeController(ILogger<HomeController> logger,PortalContext context)
         {
             _logger = logger;
             this._context = context;
+        }
+        private string CurrentLanguage
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(_currentLanguage))
+                {
+                    return _currentLanguage;
+                }
+
+
+
+                if (string.IsNullOrEmpty(_currentLanguage))
+                {
+                    var feature = HttpContext.Features.Get<IRequestCultureFeature>();
+                    _currentLanguage = feature.RequestCulture.Culture.TwoLetterISOLanguageName.ToLower();
+                }
+
+                return _currentLanguage;
+            }
+        }
+        public ActionResult RedirectToDefaultLanguage()
+        {
+            var lang = CurrentLanguage;
+            if (lang == "ar")
+            {
+                lang = "en";
+            }
+
+            return RedirectToAction("Index", new { lang = lang });
         }
         public async Task<IActionResult> Index(string lang="ar")
         {
