@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using portal.Data;
 
 namespace portal.Migrations
 {
     [DbContext(typeof(PortalContext))]
-    partial class PortalContextModelSnapshot : ModelSnapshot
+    [Migration("20210725090508_tables")]
+    partial class tables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,64 +91,6 @@ namespace portal.Migrations
                     b.ToTable("NavigationItem");
                 });
 
-            modelBuilder.Entity("portal.Models.RelatedIns", b =>
-                {
-                    b.Property<int>("id_Related")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Lang_id")
-                        .HasColumnType("int");
-
-                    b.Property<byte[]>("images_Related")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<bool>("isActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("link_Related")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("name_Related")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id_Related");
-
-                    b.HasIndex("Lang_id");
-
-                    b.ToTable("RelatedIns");
-                });
-
-            modelBuilder.Entity("portal.Models.SubNavigationItem", b =>
-                {
-                    b.Property<int>("subNav_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Lang_id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Nav_id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("isActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("subNav_name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("subNav_url")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("subNav_id");
-
-                    b.HasIndex("Nav_id");
-
-                    b.ToTable("SubNavigationItem");
-                });
-
             modelBuilder.Entity("portal.Models.slideImage", b =>
                 {
                     b.Property<int>("Id_slid")
@@ -198,28 +142,6 @@ namespace portal.Migrations
                     b.Navigation("language");
                 });
 
-            modelBuilder.Entity("portal.Models.RelatedIns", b =>
-                {
-                    b.HasOne("portal.Models.Language", "language_related")
-                        .WithMany("RelatedIns")
-                        .HasForeignKey("Lang_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("language_related");
-                });
-
-            modelBuilder.Entity("portal.Models.SubNavigationItem", b =>
-                {
-                    b.HasOne("portal.Models.NavigationItem", "navigationItem")
-                        .WithMany("subnavigationitems")
-                        .HasForeignKey("Nav_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("navigationItem");
-                });
-
             modelBuilder.Entity("portal.Models.slideImage", b =>
                 {
                     b.HasOne("portal.Models.Language", "languageImage")
@@ -237,14 +159,7 @@ namespace portal.Migrations
 
                     b.Navigation("navigationItems");
 
-                    b.Navigation("RelatedIns");
-
                     b.Navigation("Slidesimage");
-                });
-
-            modelBuilder.Entity("portal.Models.NavigationItem", b =>
-                {
-                    b.Navigation("subnavigationitems");
                 });
 #pragma warning restore 612, 618
         }

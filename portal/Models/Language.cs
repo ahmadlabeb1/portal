@@ -17,6 +17,6 @@ namespace portal.Models
         public virtual ICollection<NavigationItem> navigationItems { get; set; }
         public virtual ICollection<slideImage> Slidesimage { get; set; }
         public virtual ICollection<CardMultiAdv> cardMultiAdvs{ get; set; }
-        //public virtual ICollection<SubNavigationItem> subNavigationItemsB { get; set; }
+        public virtual ICollection<RelatedIns> RelatedIns { get; set; }
     }
 }

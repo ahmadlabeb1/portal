@@ -1,200 +1,35 @@
-﻿@model IEnumerable<Language> 
+﻿@model IEnumerable<Language>
 @{
     ViewData["Title"] = "الصفحة الرئيسية ";
 }
-<div class="d-flex flex-column ">
-    <div class="" >
-        <div class="camera_wrap" style="height: 600px;">
-
-            <div data-src="/IMG_7594.JPG" style="height: 478px;">
-            <div class="camera_caption text-center">اجتماع الوزير </div>
-            <div class="fadeIn camera_effected text-center mt-auto">
-                <h5 class="text-start" style="margin-right:30%;">برازيل</h5>
-                <p>لقاء مع الوزير</p>
-            </div>
-        </div>
-        <div data-src="/IMG_9661.JPG"><div class="camera_caption text-center">اجتماع الوزير </div></div>
-        <div data-src="/IMG_8356.JPG"><div class="camera_caption text-center">اجتماع الوزير </div></div>
-        <div data-src="/b1.jpg"></div>
-        <div data-src="/b2.jpg"></div>
-
-        </div>
-    </div>
-
-</div>
+<partial name="_ImageSlide" />
 
 
 <div class="container">
-    <div class=" text-center " @*style="height:200px; "*@>
-
-        <div class="owl-carousel owl-theme mt " id="card_services" style="direction:rtl;">
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>1</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>2</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>3</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>4</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>5</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>6</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>7</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>8</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>9</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>10</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>11</h4></div>
-            <div class="item shadow-sm mb-1 bg-body rounded"><h4>12</h4></div>
-        </div>
-    </div>
+    <partial name="_optional" />
     <div class="my-2 container-sm">
         <div class="row px-lg-2 px-sm-1  justify-content-lg-between justify-content-sm-start  ">
-            <div class="col-lg-8 mx-1 col-md-7 col-sm-11 my-1  border-golde rounded" style="height:250px;">
-                <h5 class="my-3 mx-3">اعلانات </h5>
-                <div class="owl-carousel owl-theme" id="adv_adv">
-                    <div class="adv-item">
-                        <p class="adv-title">
-                            اعلان منح مشروع نجاحها: تمكين الشابات الرياديات الفلسطينيات في القطاع الزراعي1
-                        </p>
-                        <div class="adv-date"><span>11/11/2020 1:14:22</span></div>
-                    </div>
-                    <div class="adv-item">
-                        <p class="adv-title">
-                            اعلان منح مشروع نجاحها: تمكين الشابات الرياديات الفلسطينيات في القطاع الزراعي2
-                        </p>
-                        <div class="adv-date"><span>11/11/2020 1:14:22</span></div>
-                    </div>
-                    <div class="adv-item">
-                        <p class="adv-title">
-                            اعلان منح مشروع نجاحها: تمكين الشابات الرياديات الفلسطينيات في القطاع الزراعي3
-                        </p>
-                        <div class="adv-date"><span>11/11/2020 1:14:22</span></div>
-                    </div>
-                    <div class="adv-item">
-                        <p class="adv-title">
-                            اعلان منح مشروع نجاحها: تمكين الشابات الرياديات الفلسطينيات في القطاع الزراعي4
-                        </p>
-                        <div class="adv-date"><span>11/11/2020 1:14:22</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 mx-1 col-md-2 col-sm-11 my-1 border-golde rounded"  style="height: auto;">
-                <h5 class="my-3 mx-3">الخدمات الالكترونية</h5>
-                <ul>
-                    <li>تسجيل شركة</li>
-                    <li>خدمات الملكية الفكرية</li>
-                    <li>تسجيل مصنع</li>
-                    <li>تجديد شركة</li>
-                    <li>رخصة صناعة</li>
-                    <li>التجارة</li>
-                    <li>شكاوى حماية المستهلك</li>
-                </ul>
-            </div>
+            <partial name="_MneAdv" />
+            <partial name="_ElecServices" />
+
         </div>
     </div>
 
     <div class="my-2 py-3 container-sm">
-        <h1 class="text-center ">اخبار الوزارة</h1>
-        <div class=" container-sm my-5 mx-sm-3 owl-carousel owl-theme" id="news_card">
-            <div class="card col-lg-3" style="width: 18rem; ">
-                <img src="~/b1.jpg" class="card-img-top" height="160" alt="...">
-                <div class="card-body">
-                    <p class="card-text">لقاء الوزير مع السفير</p>
-                    <a href="#" class="btn btn-outline-primary">المزيد</a>
-                </div>
-            </div>
-            <div class="card col-lg-3 " style="width: 18rem;">
-                <img src="~/b2.jpg" class="card-img-top" height="160" alt="...">
-                <div class="card-body">
-                    <p class="card-text">اجتماع الوزير</p>
-                    <a href="#" class="btn btn-outline-primary">المزيد</a>
-                </div>
-            </div>
-            <div class="card col-lg-3" style="width: 18rem;">
-                <img src="~/demand.png" class="card-img-top" height="160" alt="...">
-                <div class="card-body">
-                    <p class="card-text">ورشة عمل</p>
-                    <a href="#" class="btn btn-outline-primary">المزيد</a>
-                </div>
-            </div>
-            <div class="card col-lg-3" style="width: 18rem;">
-                <img src="~/b1.jpg" class="card-img-top" height="160" alt="...">
-                <div class="card-body">
-                    <p class="card-text">اجتماع ادارة تكنولوجيا</p>
-                    <a href="#" class="btn btn-outline-primary">المزيد</a>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="text-center my-4">
-            <button type="button" class="btn btn-outline-info">المزيد</button>
-        </div>
+        <partial name="_MneNews" />
     </div>
 </div>
 
-<section class="image-static my-2 py-3 text-white" style="height:400px;">
-    <h5 class="text-center ">أنشطة وفعاليات</h5>
-    <div class="row mx-4">
-        <div class="col-6 my-3" style="height:300px; border-left:2px solid white;">
-            <a href="#" class="event-items">
-                <div class="date"></div>
-                <div class="title"></div>
-            </a>
-            <a href="#" class="event-items">
-                <div class="date"></div>
-                <div class="title"></div>
-            </a>
-        </div>
-        <div class="col-6 " style="height:300px;">
-            <a href="#" class="event-items">
-                <div class="date"></div>
-                <div class="title"></div>
-            </a>
-            <a href="#" class="event-items">
-                <div class="date"></div>
-                <div class="title"></div>
-            </a>
-        </div>
-    </div>
-</section>
+<partial name="_Activities" />
 <div class="container">
-    <section class="my-2 border border-2" style="height:150px;">
-        <div class="container text-center">
-            برنامج
-        </div>
-    </section>
+    <partial name="_ProgrameImage" />
 </div>
 <div class="my-2 image-static-adv" id="promotional-movie" style="height:400px;">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 border border-2 border-primary">
-                <a data-fancybox href="https://www.youtube.com/watch?v=o5pXIG-NuFQ">
-
-                </a>
-            </div>
-            <div class="col-lg-5 border border-2 border-primary"></div>
-
-        </div>
-    </div>
-  
-
-
-
-
+    <partial name="_ImageAdv" />
 </div>
 <div class="" style="">
-
-        <div class="my-5 align-content-center container justify-content-center " style="height:250px;">
-            <h5 class="text-center ">مؤسسات التابعة</h5>
-            <div class="owl-carousel owl-theme my-4 " style="" id="orgnization_att">
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>المواصفات والمقاييس</h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>تشجيع الاستثمار</h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>المدن الصناعية </h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>التكافل</h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>5</h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>6</h4></div>
-                <div class="item shadow-sm mb-1 bg-body rounded"><h4>7</h4></div>
-
-            </div>
-        </div>
-    </div>
+    <partial name="_EcoInstitutions" />
+</div>
 
 @section scripts_owl{
     <link href="~/lib/owlSlider/css/animate.css" rel="stylesheet" />

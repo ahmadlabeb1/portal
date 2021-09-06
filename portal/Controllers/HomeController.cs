@@ -22,35 +22,35 @@ namespace portal.Controllers
             _logger = logger;
             this._context = context;
         }
-        public async Task<IActionResult> Index(string lang="ar")
+        public async Task<IActionResult> Index()
         {
-            ViewBag.dirPage = "rtl";
-            ViewBag.lang = lang;
-            ViewBag.linkLang = "English";
-            ViewBag.href = "en";
-            var cookieOptions = new CookieOptions
-            {
-                 
-                Secure = true,
+            //ViewBag.dirPage = "rtl";
+            //ViewBag.lang = lang;
+            //ViewBag.linkLang = "English";
+            //ViewBag.href = "en";
+            //var cookieOptions = new CookieOptions
+            //{
 
-                
-                HttpOnly = true,
+            //    Secure = true,
 
-             
-                SameSite = SameSiteMode.None
-            };
 
-            Response.Cookies.Append("dirPage",ViewBag.dirPage, cookieOptions);
-            var alldata = _context.Language.Where(a => a.Lang_key.Contains(lang)).Select(s => s);
-            if (lang=="en")
-            {
-                ViewBag.dirPage = "ltr";
-                ViewBag.lang = lang;
-                ViewBag.linkLang = "عربي";
-                ViewBag.href = "ar";
-                ViewBag.styleImage="image-size";
-            }
-            return View(await alldata.ToListAsync());
+            //    HttpOnly = true,
+
+
+            //    SameSite = SameSiteMode.None
+            //};
+
+            //Response.Cookies.Append("dirPage",ViewBag.dirPage, cookieOptions);
+           
+            //if (lang=="en")
+            //{
+            //    ViewBag.dirPage = "ltr";
+            //    ViewBag.lang = lang;
+            //    ViewBag.linkLang = "عربي";
+            //    ViewBag.href = "ar";
+            //    ViewBag.styleImage="image-size";
+            //}
+            return View();
         }
         //public IActionResult Index(string lang="ar")
         //{
