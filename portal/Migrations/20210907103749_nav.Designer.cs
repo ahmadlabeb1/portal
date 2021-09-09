@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using portal.Data;
 
 namespace portal.Migrations
 {
     [DbContext(typeof(PortalContext))]
-    partial class PortalContextModelSnapshot : ModelSnapshot
+    [Migration("20210907103749_nav")]
+    partial class nav
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +27,6 @@ namespace portal.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("lang_Id")
-                        .HasColumnType("int");
-
                     b.Property<string>("nameHint")
                         .HasColumnType("nvarchar(max)");
 
@@ -38,8 +37,6 @@ namespace portal.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id_IconNav");
-
-                    b.HasIndex("lang_Id");
 
                     b.ToTable("IconNav");
                 });
@@ -60,22 +57,6 @@ namespace portal.Migrations
                     b.HasKey("Lang_Id");
 
                     b.ToTable("Language");
-                });
-
-            modelBuilder.Entity("portal.Models.IconNav", b =>
-                {
-                    b.HasOne("portal.Models.Language", "language")
-                        .WithMany("IconNavs")
-                        .HasForeignKey("lang_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("language");
-                });
-
-            modelBuilder.Entity("portal.Models.Language", b =>
-                {
-                    b.Navigation("IconNavs");
                 });
 #pragma warning restore 612, 618
         }

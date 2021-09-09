@@ -2,7 +2,7 @@
 
 namespace portal.Migrations
 {
-    public partial class relatedins1 : Migration
+    public partial class de : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

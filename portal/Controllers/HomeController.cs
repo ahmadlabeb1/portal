@@ -10,53 +10,29 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-
+using portal.ModelView;
 namespace portal.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly PortalContext _context;
-        public HomeController(ILogger<HomeController> logger,PortalContext context)
+        public HomeController(ILogger<HomeController> logger, PortalContext context)
         {
             _logger = logger;
             this._context = context;
         }
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            //ViewBag.dirPage = "rtl";
-            //ViewBag.lang = lang;
-            //ViewBag.linkLang = "English";
-            //ViewBag.href = "en";
-            //var cookieOptions = new CookieOptions
-            //{
-
-            //    Secure = true,
-
-
-            //    HttpOnly = true,
-
-
-            //    SameSite = SameSiteMode.None
-            //};
-
-            //Response.Cookies.Append("dirPage",ViewBag.dirPage, cookieOptions);
-           
-            //if (lang=="en")
-            //{
-            //    ViewBag.dirPage = "ltr";
-            //    ViewBag.lang = lang;
-            //    ViewBag.linkLang = "عربي";
-            //    ViewBag.href = "ar";
-            //    ViewBag.styleImage="image-size";
-            //}
-            return View();
+            // var alldata = await _context.IconNav.Select(a=>a).ToListAsync();
+            var data = _context.IconNav.Select(a => a);
+            return View(data.ToList());
         }
-        //public IActionResult Index(string lang="ar")
-        //{
-        //    var all_data= _context.Language.Select(a => a).Where(a => a.Lang_key.Contains(lang));
-        //    return View(all_data);
-        //}
+        public JsonResult dataIcon()
+        {
+            var data = _context.IconNav.Select(a => a).Where(a=>a.language.Lang_key.Contains("ar"));
+            return Json(data);
+        }
 
         public IActionResult Privacy()
         {

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<portal.Models.IconNav>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nameHint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nameNav)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.urlNav)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nameHint)
+            </td>
+            <td>
+                @Html.Raw(item.nameNav) 
+                @*@Html.DisplayFor(modelItem => item.nameNav)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.urlNav)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_IconNav">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_IconNav">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_IconNav">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

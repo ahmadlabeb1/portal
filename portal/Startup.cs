@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using portal.Data;
 
+
+
 namespace portal
 {
     public class Startup
@@ -29,6 +31,10 @@ namespace portal
 
             services.AddDbContext<PortalContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("PortalContext")));
+
+           
+
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

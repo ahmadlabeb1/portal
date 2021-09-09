@@ -14,9 +14,7 @@ namespace portal.Models
         public string Lang_name { get; set; }
         [Display(Name ="مفتاح اللغة")]
         public string Lang_key { get; set; }
-        public virtual ICollection<NavigationItem> navigationItems { get; set; }
-        public virtual ICollection<slideImage> Slidesimage { get; set; }
-        public virtual ICollection<CardMultiAdv> cardMultiAdvs{ get; set; }
-        public virtual ICollection<RelatedIns> RelatedIns { get; set; }
+
+        public virtual IEnumerable<IconNav> IconNavs { get; set; }
     }
 }
