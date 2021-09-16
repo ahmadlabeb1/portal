@@ -9,7 +9,6 @@ namespace portal.Data
 {
     public class PortalContext : DbContext
     {
-        internal object allData;
 
         public PortalContext (DbContextOptions<PortalContext> options)
             : base(options)
@@ -19,5 +18,7 @@ namespace portal.Data
         public DbSet<portal.Models.Language> Language { get; set; }
 
         public DbSet<portal.Models.IconNav> IconNav { get; set; }
+        public DbSet<NameNav> NameNav { get; set; }
+        public DbSet<subNameNav> SubNameNav { get; set; }
     }
 }

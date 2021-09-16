@@ -16,5 +16,6 @@ namespace portal.Models
         public string Lang_key { get; set; }
 
         public virtual IEnumerable<IconNav> IconNavs { get; set; }
+        public virtual IEnumerable<NameNav> Navs { get; set; }
     }
 }

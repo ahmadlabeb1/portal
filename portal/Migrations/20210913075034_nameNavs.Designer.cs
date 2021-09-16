@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using portal.Data;
 
 namespace portal.Migrations
 {
     [DbContext(typeof(PortalContext))]
-    partial class PortalContextModelSnapshot : ModelSnapshot
+    [Migration("20210913075034_nameNavs")]
+    partial class nameNavs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,29 +87,6 @@ namespace portal.Migrations
                     b.ToTable("NameNav");
                 });
 
-            modelBuilder.Entity("portal.Models.subNameNav", b =>
-                {
-                    b.Property<int>("Id_subNav")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("NavName_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("nameSubNav")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("url")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id_subNav");
-
-                    b.HasIndex("NavName_id");
-
-                    b.ToTable("SubNameNav");
-                });
-
             modelBuilder.Entity("portal.Models.IconNav", b =>
                 {
                     b.HasOne("portal.Models.Language", "language")
@@ -130,27 +109,11 @@ namespace portal.Migrations
                     b.Navigation("Language");
                 });
 
-            modelBuilder.Entity("portal.Models.subNameNav", b =>
-                {
-                    b.HasOne("portal.Models.NameNav", "NavsName")
-                        .WithMany("SubNameNavs")
-                        .HasForeignKey("NavName_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("NavsName");
-                });
-
             modelBuilder.Entity("portal.Models.Language", b =>
                 {
                     b.Navigation("IconNavs");
 
                     b.Navigation("Navs");
-                });
-
-            modelBuilder.Entity("portal.Models.NameNav", b =>
-                {
-                    b.Navigation("SubNameNavs");
                 });
 #pragma warning restore 612, 618
         }

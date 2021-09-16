@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using portal.Data;
 
 namespace portal.Migrations
 {
     [DbContext(typeof(PortalContext))]
-    partial class PortalContextModelSnapshot : ModelSnapshot
+    [Migration("20210913075629_subnavs")]
+    partial class subnavs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,7 +107,7 @@ namespace portal.Migrations
 
                     b.HasIndex("NavName_id");
 
-                    b.ToTable("SubNameNav");
+                    b.ToTable("subNameNav");
                 });
 
             modelBuilder.Entity("portal.Models.IconNav", b =>

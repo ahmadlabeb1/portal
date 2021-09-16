@@ -11,4 +11,9 @@ namespace portal.ModelView
         public Language language { get; set; }
         public IconNav IconNav { get; set; }
     }
+    public class navs
+    {
+        public NameNav nameNav { get; set; }
+        public subNameNav subNameNav { get; set; }
+    }
 }

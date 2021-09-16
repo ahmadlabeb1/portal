@@ -1,20 +1,10 @@
-﻿@model IEnumerable<IconNav>
-
-
-<ul class="nav justify-content-lg-start justify-content-sm-center ">
-    @foreach (var itemIcon in Model)
-    {
-        
-        <li class="col-lg-auto col-sm-auto"><a class="btn btn-link nav-link" href="@itemIcon.urlNav"  title="@itemIcon.nameHint">@Html.Raw(itemIcon.nameNav)</a></li>
-
-
-    }
-    @*<li class="col-lg-auto col-sm-auto"><a class="btn btn-link nav-link" href="/Home/Index" data-toggle="tooltip" data-placement="bottom" title="الصفحة الرئيسية"><i class="fas fa-home color-fa"></i></a></li>
+﻿<ul class="nav justify-content-lg-start justify-content-sm-center ">
+    <li class="col-lg-auto col-sm-auto"><a class="btn btn-link nav-link" href="/Home/Index" data-toggle="tooltip" data-placement="bottom" title="الصفحة الرئيسية"><i class="fas fa-home color-fa"></i></a></li>
     <li class="col-lg-auto col-sm-auto"><button class="nav-link btn btn-link" title="اتصل بنا"><i class="fas fa-phone color-fa"></i></button></li>
     <li class="col-lg-auto col-sm-auto"><button class="nav-link btn btn-link" title="خريطة الموقع"><i class="fas fa-sitemap color-fa"></i></button></li>
     <li class="col-lg-auto col-sm-auto"><button class="nav-link btn btn-link" title="الاسئلة الاكثر تكرارا"><i class="far fa-question-circle color-fa"></i></button></li>
     <li class="col-lg-auto col-sm-auto"><button class="nav-link btn btn-link" title="تسجيل الدخول"><i class="fas fa-user color-fa"></i></button></li>
     <li class="col-lg-auto col-sm-auto"><button class="btn btn-link nav-link" title="بحث" data-bs-toggle="modal" data-bs-target="#MneSearch"><i class="fas fa-search color-fa"></i></button></li>
     <li class="col-lg-auto col-sm-auto"><button class="btn btn-link nav-link" href="" title="اشعارات" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotify" aria-controls="offcanvasScrolling"><i class="fas fa-bell color-fa"></i></button></li>
-    <li class="col-lg-auto col-sm-auto"><a href="/Home/Index?lang=@ViewBag.href" class="btn btn-link nav-link"><i class=" color-fa">@ViewBag.linkLang</i></a></li>*@
+    <li class="col-lg-auto col-sm-auto"><a href="/Home/Index?lang=@ViewBag.href" class="btn btn-link nav-link"><i class=" color-fa">@ViewBag.linkLang</i></a></li>
 </ul>

@@ -28,10 +28,41 @@ namespace portal.Controllers
             var data = _context.IconNav.Select(a => a);
             return View(data.ToList());
         }
-        public JsonResult dataIcon()
+        public JsonResult IconNav()
         {
-            var data = _context.IconNav.Select(a => a).Where(a=>a.language.Lang_key.Contains("ar"));
+            var data = _context.IconNav.Select(a => a).Where(a => a.language.Lang_key.Contains("ar"));
             return Json(data);
+        }
+        public JsonResult NameNavs()
+        {
+            var navs = _context.NameNav.Join(_context.SubNameNav,
+                n => n.Id_nameNav,
+                s => s.NavName_id,
+                (n, s) => new navs
+                {
+                    nameNav = new NameNav
+                    {
+                        Id_nameNav = n.Id_nameNav,
+                        nameNav = n.nameNav,
+                        url = n.url,
+                        Language = new Language
+                        {
+                            Lang_Id=n.Language.Lang_Id,
+                            Lang_key = n.Language.Lang_key,
+                            Lang_name=n.Language.Lang_name
+                             
+                              
+                   
+                        }
+                    },
+                    subNameNav = new subNameNav
+                    {
+                        Id_subNav = s.Id_subNav,
+                        nameSubNav = s.nameSubNav,
+                        url = s.url
+                    }
+                }).Where(w => w.nameNav.Language.Lang_key.Contains("ar")); 
+            return Json(navs);
         }
 
         public IActionResult Privacy()
