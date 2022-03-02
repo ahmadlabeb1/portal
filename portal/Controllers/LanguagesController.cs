@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using portal.Data;
 using portal.Models;
-using portal.ModelView;
 
 namespace portal.Controllers
 {
@@ -21,66 +20,11 @@ namespace portal.Controllers
         }
 
         // GET: Languages
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-
-            var data = _context.Language.Join(
-                _context.IconNav,
-                l => l.Lang_Id,
-                i => i.lang_Id,
-                (l, i) => new allData
-                {
-                   language=new Language
-                   {
-                       Lang_Id=l.Lang_Id,
-                       Lang_key=l.Lang_key,
-                       Lang_name=l.Lang_name
-                   },
-                   IconNav=new IconNav { 
-                       id_IconNav=i.id_IconNav,
-                       nameHint=i.nameHint,
-                       nameNav=i.nameNav,
-                       urlNav=i.urlNav
-                   }
-                }).ToList();
-            
-            return View(data);
+            return View(await _context.Language.ToListAsync());
         }
-        public JsonResult Icon()
-        {
-            var data = _context.Language.Join(
-                _context.IconNav,
-                l => l.Lang_Id,
-                i => i.lang_Id,
-                (l, i) => new allData
-                {
-                    language = new Language
-                    {
-                        Lang_Id = l.Lang_Id,
-                        Lang_key = l.Lang_key,
-                        Lang_name = l.Lang_name
-                    },
-                    IconNav = new IconNav
-                    {
-                        id_IconNav = i.id_IconNav,
-                        nameHint = i.nameHint,
-                        nameNav = i.nameNav,
-                        urlNav = i.urlNav,
-                        lang_Id=i.lang_Id
-                    }
-                }).ToList();
-            //var data = _context.IconNav.Select(a => new
-            //{
-            //    a.language.Lang_Id,
-            //    a.language.Lang_key,
-            //    a.language.Lang_name,
-            //    a.nameHint,
-            //    a.nameNav,
-            //    a.urlNav
 
-            //}).Where(a => a.Lang_key.Contains("ar"));
-            return Json(data);
-        }
         // GET: Languages/Details/5
         public async Task<IActionResult> Details(int? id)
         {

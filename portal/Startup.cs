@@ -10,8 +10,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using portal.Data;
-
-
+using portal.services;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace portal
 {
@@ -27,14 +28,27 @@ namespace portal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-
+            
+            services.AddScoped<ILanguageServices, LanguageServices>();
+            services.AddScoped<ILocalizationService, Localization>();
             services.AddDbContext<PortalContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("PortalContext")));
+            services.AddLocalization();
+            services.AddControllersWithViews().AddViewLocalization();
+            var servicesProvider = services.BuildServiceProvider();
+            var LanguageServices = servicesProvider.GetRequiredService<ILanguageServices>();
+            var language = LanguageServices.GetLanguage();
+            var culture = language.Select(x => new CultureInfo(x.Lang_key)).ToArray();
+            services.Configure<RequestLocalizationOptions>(opt =>
+            {
+                var arabicLangKey = culture.FirstOrDefault(a => a.Name == "ar");
+                opt.DefaultRequestCulture = new RequestCulture(arabicLangKey?.Name ?? "ar");
+                opt.SupportedCultures = culture;
+                opt.SupportedUICultures = culture;
+            });
 
-           
 
-           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,9 +61,9 @@ namespace portal
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseRequestLocalization();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

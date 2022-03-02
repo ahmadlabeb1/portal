@@ -16,4 +16,9 @@ namespace portal.ModelView
         public NameNav nameNav { get; set; }
         public subNameNav subNameNav { get; set; }
     }
+    public class IconNavName
+    {
+        public List<IconNav> Icon { get; set; }
+        public List<NameNav> nameNav { get; set; }
+    }
 }

@@ -8,6 +8,10 @@ namespace portal.Models
 {
     public class Language
     {
+        //public Language()
+        //{
+        //    textResources = new HashSet<TextResource>();
+        //}
         [Key]
         public int Lang_Id { get; set; }
         [Display(Name ="اللغة")]
@@ -15,7 +19,7 @@ namespace portal.Models
         [Display(Name ="مفتاح اللغة")]
         public string Lang_key { get; set; }
 
-        public virtual IEnumerable<IconNav> IconNavs { get; set; }
-        public virtual IEnumerable<NameNav> Navs { get; set; }
+     
+        public virtual ICollection<TextResource> textResources { get; set; }
     }
 }

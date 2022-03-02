@@ -13,10 +13,10 @@ namespace portal.Models
         public int Id_nameNav { get; set; }
         public string nameNav { get; set; }
         public string url { get; set; }
-        public int Lang_id { get; set; }
-        [ForeignKey("Lang_id")]
-        public Language Language { get; set; }
-        public virtual IEnumerable<subNameNav> SubNameNavs { get; set; }
+        //public int Lang_id { get; set; }
+        //[ForeignKey("Lang_id")]
+        //public Language Language { get; set; }
+        //public virtual IEnumerable<subNameNav> SubNameNavs { get; set; }
     }
     public class subNameNav
     {
@@ -24,8 +24,8 @@ namespace portal.Models
         public int Id_subNav { get; set; }
         public string nameSubNav { get; set; }
         public string url { get; set; }
-        public int NavName_id { get; set; }
-        [ForeignKey("NavName_id")]
-        public virtual NameNav NavsName { get; set; }
+        //public int NavName_id { get; set; }
+        //[ForeignKey("NavName_id")]
+        //public virtual NameNav NavsName { get; set; }
     }
 }

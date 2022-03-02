@@ -1,4 +1,22 @@
-﻿<ul class="nav justify-content-lg-start justify-content-sm-center ">
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using System.Globalization;
+@inject IOptions<RequestLocalizationOptions> locOpt
+@{
+    string returnUrl = ViewContext.HttpContext.Request.Path;
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureList = locOpt.Value.SupportedUICultures.Select(a => new SelectListItem
+    {
+        Value = a.Name,
+        Text = a.DisplayName
+    });
+
+    var currentLang = CultureInfo.CurrentUICulture.Name;
+
+}
+
+<ul class="nav justify-content-lg-start justify-content-sm-center ">
     <li class="col-lg-auto col-sm-auto"><a class="btn btn-link nav-link" href="/Home/Index" data-toggle="tooltip" data-placement="bottom" title="الصفحة الرئيسية"><i class="fas fa-home color-fa"></i></a></li>
     <li class="col-lg-auto col-sm-auto"><button class="nav-link btn btn-link" title="اتصل بنا"><i class="fas fa-phone color-fa"></i></button></li>
     <li class="col-lg-auto col-sm-auto"><button class="nav-link btn btn-link" title="خريطة الموقع"><i class="fas fa-sitemap color-fa"></i></button></li>
@@ -6,5 +24,46 @@
     <li class="col-lg-auto col-sm-auto"><button class="nav-link btn btn-link" title="تسجيل الدخول"><i class="fas fa-user color-fa"></i></button></li>
     <li class="col-lg-auto col-sm-auto"><button class="btn btn-link nav-link" title="بحث" data-bs-toggle="modal" data-bs-target="#MneSearch"><i class="fas fa-search color-fa"></i></button></li>
     <li class="col-lg-auto col-sm-auto"><button class="btn btn-link nav-link" href="" title="اشعارات" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotify" aria-controls="offcanvasScrolling"><i class="fas fa-bell color-fa"></i></button></li>
-    <li class="col-lg-auto col-sm-auto"><a href="/Home/Index?lang=@ViewBag.href" class="btn btn-link nav-link"><i class=" color-fa">@ViewBag.linkLang</i></a></li>
+    <li class="col-lg-auto col-sm-auto">
+        @if (currentLang.Contains("ar"))
+        {
+        <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
+            <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+            <input type="hidden" id="culture" name="culture" value="en" />
+            <button type="submit" class="btn btn-link nav-link"><i class="color-fa">EN</i></button>
+
+        </form>
+        }
+        else if (currentLang.Contains("en"))
+        {
+    <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
+        <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+        <input type="hidden" id="culture" name="culture" value="ar" />
+        <button type="submit" class="btn btn-link nav-link"><i class="color-fa">عربي</i></button>
+
+    </form>
+        }
+        
+    </li>
 </ul>
+@*<form asp-action="ChangeLanguage" asp-controller="Home" method="post">
+    <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+    <select id="culture"
+            name="culture"
+            class="form-control"
+            onchange="this.form.submit();"
+            asp-items="cultureList"
+            asp-for="@requestCulture.RequestCulture.UICulture.Name">
+    </select>
+</form>*@
+@*@if (currentLang.Contains("ar"))
+{
+    <h1>ar</h1>
+
+    @ViewBag.dir= "rtl";
+}
+else if (currentLang.Contains("en"))
+{
+    <p>en</p>
+    @ViewBag.dir= "ltr";
+    }*@

@@ -1,9 +1,12 @@
-﻿@using Microsoft.AspNetCore.Http.Features;
-@{
-//var dirPage=Request
+﻿@{
+    var culture = Context.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
+    var dir = culture.RequestCulture.UICulture.TextInfo.IsRightToLeft ? "rtl" : "ltr";
+    var twoLetter = culture.RequestCulture.UICulture.TwoLetterISOLanguageName;
+   
 }
+
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html dir="@dir" lang="@twoLetter">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,6 +58,7 @@
         .border-golde {
             border: 1px solid #b8ae37;
         }
+
         .btn-raduis {
             border-radius: 25px;
         }
@@ -68,6 +72,8 @@
 
                 <div class="col-lg-5 col-md-5 col-sm-12 ">
                     <partial name="_IconNavigation" />
+                    @*@await Component.InvokeAsync("viewActionR")*@
+
                 </div>
                 <div class="col-lg-6 col-md-5 col-sm-12 align-image  @ViewBag.styleImage">
                     <a href="/Home/Index"> <img src="~/Mne_logo.png" class="w-c" /></a>
@@ -81,12 +87,12 @@
             <span class="text-white navbar-toggler-icon"></span>
         </button>
         <div class="container">
-          @await Html.PartialAsync("_navigationItem")
+            @await Html.PartialAsync("_navigationItem")
         </div>
     </nav>
 
     <partial name="_offcanvas" />
- 
+
 
     <partial name="_MneSearch" />
 
@@ -98,7 +104,7 @@
     </div>
 
     <footer class="border-top footer text-muted">
-     <partial name="_Footer" />
+        <partial name="_Footer" />
     </footer>
 
 
