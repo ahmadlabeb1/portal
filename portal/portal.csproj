@@ -5,12 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="app_data\image\" />
+    <Compile Remove="app_data\**" />
+    <Content Remove="app_data\**" />
+    <EmbeddedResource Remove="app_data\**" />
+    <None Remove="app_data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\lib\slider\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BootstrapHoverDropdown" Version="1.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.6">
       <PrivateAssets>all</PrivateAssets>

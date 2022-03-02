@@ -15,5 +15,6 @@ namespace portal.Data
         }
 
         public DbSet<portal.Models.Language> Language { get; set; }
+        public DbSet<portal.Models.TextResource> textResources { get; set; }
     }
 }

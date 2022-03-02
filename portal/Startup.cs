@@ -10,7 +10,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using portal.Data;
-using portal.Models.Lang;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
@@ -33,11 +32,7 @@ namespace portal
             services.AddLocalization();
             services.AddDbContext<PortalContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("PortalContext")));
-            services.Configure<RouteOptions>(option =>
-            {
-                option.ConstraintMap.Add("Lang", typeof(LanguageRouteConstraint));
-            });
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,28 +53,14 @@ namespace portal
 
             app.UseRouting();
 
-            app.UseAuthorization();
-            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
-            app.UseRequestLocalization(options.Value);
-            app.UseMvc(routes =>
+
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-         name: "LocalizedDefault",
-         template: "{lang:lang}/{controller=Home}/{action=Index}/{id?}"
-     );
-
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{*catchall}",
-                    defaults: new { controller = "Home", action = "RedirectToDefaultLanguage", lang = "ar" });
-            });
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            //});
+            });
 
         }
     }
