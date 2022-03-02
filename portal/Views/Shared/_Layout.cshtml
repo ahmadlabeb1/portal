@@ -22,6 +22,13 @@
     <link rel="stylesheet" href="~/css/site.css" />
 
     <script src="~/js/fontawesome.js"></script>
+
+    @if (dir == "ltr")
+    {
+
+        <link href="~/css/mobileSite.css" rel="stylesheet" />
+
+    }
     <style>
         body {
             background: #f3f3f3;
@@ -75,7 +82,7 @@
                     @*@await Component.InvokeAsync("viewActionR")*@
 
                 </div>
-                <div class="col-lg-6 col-md-5 col-sm-12 align-image  @ViewBag.styleImage">
+                <div class="col-lg-6 col-md-5 col-sm-12 align-image   @ViewBag.styleImage">
                     <a href="/Home/Index"> <img src="~/Mne_logo.png" class="w-c" /></a>
                 </div>
             </nav>

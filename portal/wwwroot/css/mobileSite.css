@@ -1,0 +1,27 @@
+﻿.align-image {
+    text-align: right;
+}
+@media screen and (max-width: 576px) {
+    .w-c {
+        width: 70%;
+    }
+
+    .color-fa {
+        color: #b8ae37;
+        font-size: small;
+    }
+
+    .align-image {
+        text-align: center;
+    }
+
+    .modal-animation {
+        animation-name: rotateInDownRight;
+        animation-duration: 0.4s;
+    }
+
+    .animation-drop-sm {
+        animation-name: fadeInDown;
+        animation-duration: 0.4s;
+    }
+}
