@@ -1,6 +1,9 @@
-﻿@using portal
+﻿@inherits CustomBaseViewPage<TModel>
+@using portal
 @using portal.Models
 @using portal.ModelView
 @using portal.ViewPage
 @using portal.services
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.Extensions.Options
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

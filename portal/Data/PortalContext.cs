@@ -17,6 +17,7 @@ namespace portal.Data
 
         public DbSet<portal.Models.Language> Language { get; set; }
         public DbSet<portal.Models.TextResource> textResources { get; set; }
+        public DbSet<portal.Models.IconNav> IconNavs { get; set; }
         //public DbSet<portal.Models.IconNav> IconNav { get; set; }
         //public DbSet<NameNav> NameNav { get; set; }
         //public DbSet<subNameNav> SubNameNav { get; set; }

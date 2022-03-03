@@ -21,7 +21,7 @@ namespace portal.ViewPage
         public ILocalizationService LocalizationService { get; set; }
         public delegate HtmlString Localizer(string resourceKey, params object[] args);
         private Localizer _localizer;
-        public Localizer localizer
+        public Localizer Localize
         {
             get
             {

@@ -21,5 +21,6 @@ namespace portal.Models
 
      
         public virtual ICollection<TextResource> textResources { get; set; }
+        public virtual ICollection<IconNav> IconNavs { get; set; }
     }
 }

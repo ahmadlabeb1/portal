@@ -27,43 +27,43 @@
     <li class="col-lg-auto col-sm-auto">
         @if (currentLang.Contains("ar"))
         {
-        <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
-            <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
-            <input type="hidden" id="culture" name="culture" value="en" />
-            <button type="submit" class="btn btn-link nav-link"><i class="color-fa">EN</i></button>
+            <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
+                <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                <input type="hidden" id="culture" name="culture" value="en" />
+                <button type="submit" class="btn btn-link nav-link"><i class="color-fa">EN</i></button>
 
-        </form>
+            </form>
         }
         else if (currentLang.Contains("en"))
         {
-    <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
-        <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
-        <input type="hidden" id="culture" name="culture" value="ar" />
-        <button type="submit" class="btn btn-link nav-link"><i class="color-fa">عربي</i></button>
+            <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
+                <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                <input type="hidden" id="culture" name="culture" value="ar" />
+                <button type="submit" class="btn btn-link nav-link"><i class="color-fa">عربي</i></button>
 
-    </form>
+            </form>
         }
-        
+
     </li>
 </ul>
 @*<form asp-action="ChangeLanguage" asp-controller="Home" method="post">
-    <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
-    <select id="culture"
-            name="culture"
-            class="form-control"
-            onchange="this.form.submit();"
-            asp-items="cultureList"
-            asp-for="@requestCulture.RequestCulture.UICulture.Name">
-    </select>
-</form>*@
+        <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+        <select id="culture"
+                name="culture"
+                class="form-control"
+                onchange="this.form.submit();"
+                asp-items="cultureList"
+                asp-for="@requestCulture.RequestCulture.UICulture.Name">
+        </select>
+    </form>*@
 @*@if (currentLang.Contains("ar"))
-{
-    <h1>ar</h1>
+    {
+        <h1>ar</h1>
 
-    @ViewBag.dir= "rtl";
-}
-else if (currentLang.Contains("en"))
-{
-    <p>en</p>
-    @ViewBag.dir= "ltr";
-    }*@
+        @ViewBag.dir= "rtl";
+    }
+    else if (currentLang.Contains("en"))
+    {
+        <p>en</p>
+        @ViewBag.dir= "ltr";
+        }*@
